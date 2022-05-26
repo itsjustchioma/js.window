@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window 1</title>
+    <style>
+        body{
+            background-color: lavender;
+        }
+    </style>
+</head>
+<body>
+    <h1>WINDOW 1</h1>
+    <button onclick="closeAndOpen()" type="button">
+        Click to View New Window 
+    </button>
+    <p ></p>
+    <script>
+        window.onresize = closeFunc;
+        function closeAndOpen(){
+            const thing = window.open("./window2.htm", "New Window", "width=200px , height=200px, top=200px, left=200px, resizable=no" );
+            // window.close("./window1.htm");
+            
+        }
+        thing.addEventListener("resize", closeFunc)
+        function closeFunc(){
+            thing.close("window2.htm");
+        }
+    </script>
+</body>
+</html>
